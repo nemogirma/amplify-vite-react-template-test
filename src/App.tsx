@@ -17,14 +17,24 @@ function App() {
     client.models.Todo.create({ content: window.prompt("Todo content") });
   }
 
+  const { signOut } = useAuthenticator();
+    
+  function deleteTodo(id: string) {
+    client.models.Todo.delete({ id })
+  }
+
   return (
     <main>
       <h1>My todos</h1>
       <button onClick={createTodo}>+ new</button>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>{todo.content}</li>
+          <li onClick={() => deleteTodo(todo.id)} 
+          key={todo.id}>{todo.content}</li>
         ))}
+
+
+
       </ul>
       <div>
         🥳 App successfully hosted. Try creating a new todo.
@@ -33,6 +43,10 @@ function App() {
           Review next step of this tutorial.
         </a>
       </div>
+
+
+      <button onClick={signOut}>Sign out</button>
+
     </main>
   );
 }
