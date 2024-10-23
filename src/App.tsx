@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
-import { useAuthenticator } from '@aws-amplify/ui-react';
+// import { useAuthenticator } from '@aws-amplify/ui-react';
+
+import React from 'react';
+import SimpleForm from '../amplify/UI-component/SimpleForm';
+
 
 const client = generateClient<Schema>();
 
@@ -50,6 +54,18 @@ function App() {
 
     </main>
   );
+
 }
 
 export default App;
+
+// function App() {
+//   return (
+//     <div>
+//       <h1>My Simple Form</h1>
+//       <SimpleForm />
+//     </div>
+//   );
+// }
+
+// export default App;
