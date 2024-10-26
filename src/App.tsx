@@ -3,8 +3,8 @@ import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 // import { useAuthenticator } from '@aws-amplify/ui-react';
 
-import React from 'react';
-import SimpleForm from '../amplify/UI-component/SimpleForm';
+// import React from 'react';
+// import SimpleForm from '../amplify/UI-component/SimpleForm';
 
 
 const client = generateClient<Schema>();
@@ -22,7 +22,7 @@ function App() {
     client.models.Todo.create({ content: window.prompt("Todo content") });
   }
 
-  const { signOut } = useAuthenticator();
+  // const { signOut } = useAuthenticator();
     
   function deleteTodo(id: string) {
     client.models.Todo.delete({ id })
@@ -32,15 +32,15 @@ function App() {
     <main>
       <h1>My todos</h1>
       <button onClick={createTodo}>+ new</button>
-      <ul>
+      
+       <ul>
         {todos.map((todo) => (
-          <li onClick={() => deleteTodo(todo.id)} 
-          key={todo.id}>{todo.content}</li>
+          <li key={todo.id}>{todo.content}</li>
         ))}
+      </ul> 
 
+      {/* <ul>{todos.map(todo => <li key={todo.id}>{todo.content}</li>)}</ul> */}
 
-
-      </ul>
       <div>
         🥳 App successfully hosted. Try creating a new todo.
         <br />
@@ -50,7 +50,7 @@ function App() {
       </div>
 
 
-      <button onClick={signOut}>Sign out</button>
+      {/* <button onClick={signOut}>Sign out</button> */}
 
     </main>
   );
