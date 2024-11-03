@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import MainLayout from "../amplify/components/MainLayout";
+import MainLayout from "./components/MainLayout";
 
 function App() {
   return (
