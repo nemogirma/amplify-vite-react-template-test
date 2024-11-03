@@ -16,7 +16,8 @@ const Contact = () => {
           
           <div className="form-group">
             <label htmlFor="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea id="message" name="message" rows={5} required />
+            {/* <textarea  name="message"  rows={3} className='form-control' placeholder='Enter About your description' /> */}
           </div>
           
           <button type="submit" className="submit-button">
