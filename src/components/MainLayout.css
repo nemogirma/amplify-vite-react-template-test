@@ -104,7 +104,11 @@
   color: #ffffff;
 }
 
-
+.flex-contact-page {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 
 /* Services & Projects Grid */
 .services-grid,

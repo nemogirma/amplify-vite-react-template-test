@@ -6,6 +6,7 @@ import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
 import "./MainLayout.css";
 
+
 const MainLayout = () => {
   return (
     <div className="main-layout">
