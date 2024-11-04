@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Routes,Route,NavLink } from 'react-router-dom';
 import './Navbar.css';
 import MainLayout from "./MainLayout";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Services from "../pages/Services";
+import Projects from "../pages/Projects";
+import Contact from "../pages/Contact";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -58,7 +63,7 @@ const Navbar = () => {
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          <span className="barx"/>
+          <span className="bar"/>
           <span className="bar"/>
           <span className="bar"/>
         </button>
@@ -78,8 +83,22 @@ const Navbar = () => {
         ))}
         
         </div>
-
       )}
+
+{isMobile && (
+      <div className="HambergerMenuItems">
+        <main className="contents">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+    </div>
+  )}
+      
 
       {!isMobile && (
        <MainLayout />
