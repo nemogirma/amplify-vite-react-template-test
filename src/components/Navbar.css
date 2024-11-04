@@ -73,7 +73,7 @@
 
 .hamburger {
   display: none;
-  background: none;
+  background-color: #007bff;
   border: none;
   cursor: pointer;
   padding: 0.5rem;
