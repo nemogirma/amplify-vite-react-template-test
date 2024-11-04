@@ -35,6 +35,14 @@ const Navbar = () => {
     }
   };
 
+  const menuItems = [
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About Us' },
+    { path: '/services', label: 'Our Services' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/contact', label: 'Contact Us' },
+  ];
+
   return (
     <nav className="navbar">
       {/* <div className="nav-brand">
