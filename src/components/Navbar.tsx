@@ -69,10 +69,26 @@ const Navbar = () => {
             <span className="bar"/>
             <span className="bar"/>
           </button>
+
+          <div className={`dropdown-menu ${isMenuOpen ? 'show' : ''}`}>
+            {menuItems.map((item) => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) => 
+                  `dropdown-item ${isActive ? 'active' : ''}`
+                }
+                onClick={closeMenu}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </div>
+
         </div>
       )}
 
-     {isMobile && (
+     {/* {isMobile && (
         <div className={`nav-links ${isMobile ? 'mobile' : ''} ${isMenuOpen ? 'active' : ''}`}>
         {menuItems.map((item) => (
           <NavLink
@@ -86,7 +102,7 @@ const Navbar = () => {
         ))}
         
         </div>
-      )}
+      )} */}
 
 {/* {isMobile && (
       <div className="HambergerMenuItems">
