@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import MainLayout from "./MainLayout";
 
@@ -34,14 +33,6 @@ const Navbar = () => {
       setIsMenuOpen(false);
     }
   };
-
-  const menuItems = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About Us' },
-    { path: '/services', label: 'Our Services' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/contact', label: 'Contact Us' },
-  ];
 
   return (
     <nav className="navbar">
