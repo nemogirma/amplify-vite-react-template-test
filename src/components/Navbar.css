@@ -1,15 +1,25 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
+  /* padding: 1rem 2rem; */
+  /* max-width: 1200px; */
+  width: 100%;
+  /* margin: 0 auto; */
 }
 
 .nav-brand {
-  z-index: 2;
+  z-index: 1002;
 }
 
 .logo {

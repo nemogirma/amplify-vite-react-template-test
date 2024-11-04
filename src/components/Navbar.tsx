@@ -51,7 +51,7 @@ const Navbar = () => {
 
   return (
     <nav  className={`navbar ${isMenuOpen ? 'menu-open' : ''}`}>
-           
+      <div className="nav-content">
         {/* Hamburger Menu Button (Mobile Only) */}
         {isMobile && (
           <div className="Hamberger-Menu-content">
@@ -87,7 +87,7 @@ const Navbar = () => {
 
     
        <MainLayout />
-    
+       </div>
     </nav>
   );
 };
