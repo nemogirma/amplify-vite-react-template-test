@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import MainLayout from "./MainLayout";
 
@@ -28,11 +29,11 @@ const Navbar = () => {
   };
 
   // Close menu when clicking a link (mobile only)
-  // const closeMenu = () => {
-  //   if (isMobile) {
-  //     setIsMenuOpen(false);
-  //   }
-  // };
+  const closeMenu = () => {
+    if (isMobile) {
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -49,10 +50,27 @@ const Navbar = () => {
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          <span className="bar"/>
+          <span className="barx"/>
           <span className="bar"/>
           <span className="bar"/>
         </button>
+      )}
+
+     {isMobile && (
+        <div className={`nav-links ${isMobile ? 'mobile' : ''} ${isMenuOpen ? 'active' : ''}`}>
+        {menuItems.map((item) => (
+          <NavLink
+            key={item.path}
+            to={item.path}
+            className={({ isActive }) => isActive ? 'active' : ''}
+            onClick={closeMenu}
+          >
+            {item.label}
+          </NavLink>
+        ))}
+        
+        </div>
+
       )}
 
       {!isMobile && (
