@@ -28,11 +28,11 @@ const Navbar = () => {
   };
 
   // Close menu when clicking a link (mobile only)
-  const closeMenu = () => {
-    if (isMobile) {
-      setIsMenuOpen(false);
-    }
-  };
+  // const closeMenu = () => {
+  //   if (isMobile) {
+  //     setIsMenuOpen(false);
+  //   }
+  // };
 
   return (
     <nav className="navbar">
