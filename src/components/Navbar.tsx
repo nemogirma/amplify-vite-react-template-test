@@ -50,93 +50,44 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navbar">
-      {/* <div className="nav-brand">
-        <NavLink to="/" className="logo">
-          Your Logo
-        </NavLink>
-      </div> */}
-
-      {/* Hamburger Menu Button (Mobile Only) */}
-      {isMobile && (
-        <div className="Hamberger-Menu-content">
-          <button 
-            className={`hamburger ${isMenuOpen ? 'open' : ''}`} 
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            <span className="bar"/>
-            <span className="bar"/>
-            <span className="bar"/>
-          </button>
-
-          <div className={`dropdown-menu ${isMenuOpen ? 'show' : ''}`}>
-            {menuItems.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                className={({ isActive }) => 
-                  `dropdown-item ${isActive ? 'active' : ''}`
-                }
-                onClick={closeMenu}
-              >
-                {item.label}
-              </NavLink>
-            ))}
+    <nav  className={`navbar ${isMenuOpen ? 'menu-open' : ''}`}>
+           
+        {/* Hamburger Menu Button (Mobile Only) */}
+        {isMobile && (
+          <div className="Hamberger-Menu-content">
+            <button 
+              className={`hamburger ${isMenuOpen ? 'open' : ''}`} 
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              <span className="bar"/>
+              <span className="bar"/>
+              <span className="bar"/>
+            </button>
           </div>
+        )}
 
-        </div>
-      )}
+    {/* Dropdown Menu */}
+    {isMobile && (
+        <div className={`dropdown-menu ${isMenuOpen ? 'show' : ''}`}>
+              {menuItems.map((item) => (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  className={({ isActive }) => 
+                    `dropdown-item ${isActive ? 'active' : ''}`
+                  }
+                  onClick={closeMenu}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+        )}
 
-     {/* {isMobile && (
-        <div className={`nav-links ${isMobile ? 'mobile' : ''} ${isMenuOpen ? 'active' : ''}`}>
-        {menuItems.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            className={({ isActive }) => isActive ? 'active' : ''}
-            onClick={closeMenu}
-          >
-            {item.label}
-          </NavLink>
-        ))}
-        
-        </div>
-      )} */}
-
-{/* {isMobile && (
-      <div className="HambergerMenuItems">
-        <main className="contents">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
-    </div>
-  )} */}
-      
-
-      {/* {!isMobile && ( */}
+    
        <MainLayout />
-      {/* )} */}
-
-      {/* Navigation Links */}
-      {/* <div className={`nav-links ${isMobile ? 'mobile' : ''} ${isMenuOpen ? 'active' : ''}`}>
-        {menuItems.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            className={({ isActive }) => isActive ? 'active' : ''}
-            onClick={closeMenu}
-          >
-            {item.label}
-          </NavLink>
-        ))}
-        
-      </div> */}
+    
     </nav>
   );
 };
