@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import { Routes,Route,NavLink } from 'react-router-dom';
 import './Navbar.css';
 import MainLayout from "./MainLayout";
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Services from "../pages/Services";
-import Projects from "../pages/Projects";
-import Contact from "../pages/Contact";
+// import Home from "../pages/Home";
+// import About from "../pages/About";
+// import Services from "../pages/Services";
+// import Projects from "../pages/Projects";
+// import Contact from "../pages/Contact";
+// import "./MainLayout.css";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -58,15 +59,17 @@ const Navbar = () => {
 
       {/* Hamburger Menu Button (Mobile Only) */}
       {isMobile && (
-        <button 
-          className={`hamburger ${isMenuOpen ? 'open' : ''}`} 
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          <span className="bar"/>
-          <span className="bar"/>
-          <span className="bar"/>
-        </button>
+        <div className="Hamberger-Menu-content">
+          <button 
+            className={`hamburger ${isMenuOpen ? 'open' : ''}`} 
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span className="bar"/>
+            <span className="bar"/>
+            <span className="bar"/>
+          </button>
+        </div>
       )}
 
      {isMobile && (
@@ -85,7 +88,7 @@ const Navbar = () => {
         </div>
       )}
 
-{isMobile && (
+{/* {isMobile && (
       <div className="HambergerMenuItems">
         <main className="contents">
         <Routes>
@@ -97,12 +100,12 @@ const Navbar = () => {
         </Routes>
       </main>
     </div>
-  )}
+  )} */}
       
 
-      {!isMobile && (
+      {/* {!isMobile && ( */}
        <MainLayout />
-      )}
+      {/* )} */}
 
       {/* Navigation Links */}
       {/* <div className={`nav-links ${isMobile ? 'mobile' : ''} ${isMenuOpen ? 'active' : ''}`}>
