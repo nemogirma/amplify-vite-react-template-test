@@ -1,7 +1,7 @@
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: flex;
+  /* top: 0;
+  left: 0; */
   width: 100%;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -55,9 +55,21 @@
 
 /* Hamburger Menu */
 .hamburger-menu-container {
-  position: 0;
-  z-index: 10;
+  position: relative;
+  z-index: 1002;
 }
+
+.Hamberger-Menu-content {
+  display: block;
+  position: 0;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #333;
+  transition: all 0.3s ease-in-out;
+  }
 
 .hamburger {
   display: none;
@@ -71,6 +83,8 @@
 .hamburger .bar {
   display: block;
   position: 0;
+  left: 0;
+  top: 0;
   width: 25px;
   height: 3px;
   margin: 5px auto;
@@ -80,18 +94,17 @@
 
 /* Dropdown Menu */
 .dropdown-menu {
-  position: absolute;
-  top: -100%;
-  right: 0;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100%;
   background-color: #ffffff;
+  padding: 1rem 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  padding: 0.5rem 0;
-  min-width: 200px;
+  transition: all 0.3s ease-in-out;
+  z-index: 1001;
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-10px);
-  transition: all 0.3s ease-in-out;
 }
 
 .dropdown-menu.show {
